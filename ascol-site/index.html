@@ -8,57 +8,68 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		        <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-            <link href = "css/main.css" rel="stylesheet"media="screen">   
+                <link href = "css/main.css" rel="stylesheet"media="screen">   
             <!-- Important Owl stylesheet -->
-            <link rel="stylesheet" href="js/owl-carousel/owl.carousel.css">
+                <link rel="stylesheet" href="js/owl-carousel/owl.carousel.css">
  
             <!-- Default Theme -->
-            <link rel="stylesheet" href="js/owl-carousel/owl.theme.css">
+                <link rel="stylesheet" href="js/owl-carousel/owl.theme.css">
  	
  	    <!-- Social Icons -->
             <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+        <!-- Custom CSS -->
+            <link href="css/scrolling-nav.css" rel="stylesheet">
         </head>
 <body>
     <!--<section class="wrapper container">-->
         <header id="header">
-            <div class="navbar navbar-default navbar-static-top col-sm-12" role="navigation">
-            	<div class="container">
-                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+           <!--<div class = "container text-center">
+               <div class="col-sm-12">
+                    <div id="logo">
+                        <span><img src="images/logo.png"/>
+                          Amrit Science College</span>
+                    </div>
+                </div>
+            </div>-->
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            	<div class="container-fluid">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                 <a href="#" class="navbar-brand"> <img src="images/logo.png"  width="50" height="30" style="padding: 0; margin: 0;" /></a>
-                 <a href="#" class="navbar-brand">
+                     <a href="#" class="navbar-brand page-scroll"> 
+                         <img src="images/logo.png"  width="50" height="30" style="padding: 0; margin: 0;" />
+                     </a>
+                     <a href="#" class="navbar-brand page-scroll">
                           Amrit Science College
-                </a>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
-                <li class="dropdown">
-                <a href="#" class="dropdown-togggle" data-toggle="dropdown"><span class="glyphicon glyphicon-education"></span>&nbsp;Academics&nbsp;<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                <li><a href="#">bah! bah!</a></li>
-                <li><a href="#">black</a></li>
-                <li><a href="#">sheep</a></li>
-                </ul>
-                </li>
-                <li class="dropdown">
-                <a href="#"  class="dropdown-togggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>&nbsp;Admission&nbsp;<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                <li><a href="#">have you</a></li>
-                <li><a href="#">any</a></li>
-                <li><a href="#">wool</a></li>
-                </ul>
-                </li> 
-                <li><a href="#"><span class="glyphicon glyphicon-book"></span>&nbsp;Research</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span>&nbsp; About</a></li>
-            </ul>
-        </div>
-        </div> 
-        </div>
-        </header> 
+                    </a>
+                <div class="navbar-collapse collapse navbar-ex1-collaspe">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
+                        <li class="dropdown"><a class="page-scroll" href="#" class="dropdown-togggle" data-toggle="dropdown"><span class="glyphicon glyphicon-education"></span>&nbsp;Academics&nbsp;<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="page-scroll" href="#">bah! bah!</a></li>
+                                <li><a class="page-scroll" href="#">black</a></li>
+                                <li><a class="page-scroll" href="#">sheep</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="page-scroll" href="#"  class="dropdown-togggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>&nbsp;Admission&nbsp;<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">have you</a></li>
+                                 <li><a href="#">any</a></li>
+                                 <li><a href="#">wool</a></li>
+                            </ul>
+                        </li> 
+                        <li><a class="page-scroll" href="#"><span class="glyphicon glyphicon-book"></span>&nbsp;Research</a></li>
+                        <li><a class="page-scroll" href="#"><span class="glyphicon glyphicon-info-sign"></span>&nbsp; About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav> 
+   </header>
     <div class= "container">
         <div class= "row">
             <div class= "column full">
@@ -71,36 +82,35 @@
             </div>
         </div>
     </div>
-
+    
 	<div class="container-fluid" id="Home">
-          <h3>Welcome</h3><br>
+        <h3>Welcome</h3><br>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><br>
 
-          <button type="button"><a href="#">Read more</a></button>
+        <button type="button"><a href="#">Read more</a></button>
         
-        </div>
-
-        <div class="container-fluid">
-          <h3>Academics</h3><br>
+    </div>
+    <div class="container-fluid">
+        <h3>Academics</h3><br>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><br>
-          <div id="levels">
+        <div id="levels">
             <h5><b>MASTERS LEVEL</b></h5><br>
           </div>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><br>
               <div class="row">
                 <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                  <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-6">
+                         <div class="row">
+                            <div class="col-sm-3">
                       <!--physics-->
-                        <div class="row">
-                          <button class="btn btn-primary btn-lg btn-round" type="button"><a href="#"></a>Ph</button>
-                        </div>
-                        <div class="row">
-                          <a href="#">Physics</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
+                                <div class="row">
+                                  <button class="btn btn-primary btn-lg btn-round" type="button"><a href="#"></a>Ph</button>
+                                </div>
+                                 <div class="row">
+                                <a href="#">Physics</a>
+                                </div>
+                            </div>
+                   <div class="col-sm-3">
                       <!--Chemistry-->
                         <div class="row">
                           <button class="btn btn-primary btn-lg btn-round" type="button"><a href="#"></a>Ch</button>
@@ -129,7 +139,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3 col-sm-offset-3"></div>
+               <div class="col-sm-3 col-sm-offset-3"></div>
               </div>
             </div>
 
@@ -209,7 +219,8 @@
                 </div>
               </div>
           </div>
-	     </div>
+	   </div>
+
 
       <!--research-->
         <div class="container-fluid" id="research">
@@ -227,7 +238,7 @@
 
             <button type="button"><a href="#">Read more</a></button>
         </div>
-
+      
       <!--footer-->
         <footer>
         <div class="navbar navbar-inverse navbar-static-bottom " >
@@ -237,7 +248,7 @@
           </div>
           </div>
         </footer>
-		    
+    
 		    
 		    
 		    
@@ -253,6 +264,10 @@
             <!-- Include js plugin -->
            <script type="text/javascript" src="js/owl-carousel/owl.carousel.min.js"></script>
             <script type="text/javascript" src="js/owl-carousel/owl.carousel.js"></script>
+              <!-- Scrolling Nav JavaScript -->
+            <script src="js/jquery.easing.min.js"></script>
+            <script src="js/scrolling-nav.js"></script>
+
 
          
 		    <script>
