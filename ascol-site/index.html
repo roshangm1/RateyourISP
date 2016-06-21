@@ -7,22 +7,20 @@
             <meta name="description" content="">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-		        <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-                <link href = "css/main.css" rel="stylesheet"media="screen">   
-            <!-- Important Owl stylesheet -->
-                <link rel="stylesheet" href="js/owl-carousel/owl.carousel.css">
- 
+		    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+            <link href = "css/main.css" rel="stylesheet"media="screen">   
             <!-- Default Theme -->
-                <link rel="stylesheet" href="js/owl-carousel/owl.theme.css">
- 	
- 	    <!-- Social Icons -->
+            <link rel="stylesheet" href="js/owl-carousel/owl.theme.css">
+ 	        <!-- Social Icons -->
             <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
-        <!-- Custom CSS -->
+            <!-- Custom CSS -->
             <link href="css/scrolling-nav.css" rel="stylesheet">
+            <!--wow slider-->   
+            <link rel="stylesheet" type="text/css" href="engine0/style.css" />
+            <script type="text/javascript" src="engine0/jquery.js"></script>
         </head>
 <body>
-    <!--<section class="wrapper container">-->
-        <header id="header">
+    <header id="header">
            <!--<div class = "container text-center">
                <div class="col-sm-12">
                     <div id="logo">
@@ -31,14 +29,14 @@
                     </div>
                 </div>
             </div>-->
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            	<div class="container-fluid">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                      <a href="#" class="navbar-brand page-scroll"> 
                          <img src="images/logo.png"  width="50" height="30" style="padding: 0; margin: 0;" />
                      </a>
@@ -48,7 +46,7 @@
                 <div class="navbar-collapse collapse navbar-ex1-collaspe">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp; Home</a></li>
-                        <li class="dropdown"><a class="page-scroll" href="#" class="dropdown-togggle" data-toggle="dropdown"><span class="glyphicon glyphicon-education"></span>&nbsp;Academics&nbsp;<b class="caret"></b></a>
+                        <li class="dropdown"><a class="page-scroll" href="#" class="dropdown-togggle" data-toggle="dropdown"><span class="glyphicon     glyphicon-education"></span>&nbsp;Academics&nbsp;<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a class="page-scroll" href="#">bah! bah!</a></li>
                                 <li><a class="page-scroll" href="#">black</a></li>
@@ -70,30 +68,32 @@
             </div>
         </nav> 
    </header>
-    <div class= "container">
-        <div class= "row">
-            <div class= "column full">
-                <div id="carousel" class="owl-carousel owl-theme">
-                    <div class= "item"><img src="images/ascol.jpg" alt="1"></div>
-                       <div class= "item">
-                       <img src="images/slider2.jpg"></div>
-                       <div class= "item"><img src="images/slider3.jpg" alt="2"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+    <div id="wowslider-container0" style="margin:100px 0 0 15%;">
+        <div class="ws_images">
+            <ul>
+		        <li><img src="data0/images/slider1.jpg" alt="slider1" title="slider1" id="wows0_0"/></li>
+		        <li><a href="http://wowslider.com"><img src="data0/images/slider2.jpg" alt="wowslider" title="slider2" id="wows0_1"/></a></li>
+		        <li><img src="data0/images/slider3.jpg" alt="slider3" title="slider3" id="wows0_2"/></li>
+	        </ul>
+	    </div>
+	<div class="ws_bullets"><div>
+		<a href="#" title="slider1"><span><img src="data0/tooltips/slider1.jpg" alt="slider1"/>1</span></a>
+		<a href="#" title="slider2"><span><img src="data0/tooltips/slider2.jpg" alt="slider2"/>2</span></a>
+		<a href="#" title="slider3"><span><img src="data0/tooltips/slider3.jpg" alt="slider3"/>3</span></a>
+	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">bootstrap slider</a> by WOWSlider.com v8.7</div>
+	<div class="ws_shadow"></div>
+	</div>	
+	<div class= "container">
 	<div class="container-fluid" id="Home">
         <h3>Welcome</h3><br>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><br>
 
         <button type="button"><a href="#">Read more</a></button>
-        
     </div>
-    <div class="container-fluid">
+   <div class="container-fluid">
         <h3>Academics</h3><br>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><br>
-        <div id="levels">
+        <div class="container-fluid" id="levels">
             <h5><b>MASTERS LEVEL</b></h5><br>
           </div>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><br>
@@ -143,8 +143,8 @@
               </div>
             </div>
 
-          <div id="levels">
-            <h5><br><br><b>BACHELORS LEVEL</b></h5><br>
+          <div class="container-fluid" id="levels">
+            <h5><b>BACHELORS LEVEL</b></h5><br>
           </div>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br><br>
               <div class="row">
@@ -218,8 +218,7 @@
                     </div>
                 </div>
               </div>
-          </div>
-	   </div>
+          
 
 
       <!--research-->
@@ -240,54 +239,36 @@
         </div>
       
       <!--footer-->
-        <footer>
+        <footer style="margin:5px 0 0 0;">
         <div class="navbar navbar-inverse navbar-static-bottom " >
           <div class="container" style="color:white;">
-            <br>copyright&nbsp;&copy;&nbsp;&nbsp;
-            <a href="#" class="label"><span class="label label-info"><i class="fa fa-facebook " ></i>&nbsp;1.25k</span></a>
+            <img src="images/tu.jpg" width="10%" height="10%"/>&nbsp;&nbsp;Lainchour, Kathmandu<br>Call us: 01-7654321<br>Email: <a href="#"> contact@amritcampus.edu.np</a><br>
+            <button class="btn btn-primary"><i class="fa fa-facebook " ></i>&nbsp;&nbsp;<span class="badge">10k</span></button><hr>
+            All Rights Reserved. &copy; ASCol 2016 | Desined By CSIT Students
           </div>
           </div>
         </footer>
-    
-		    
-		    
-		    
-		    
-		    
-		  
-		    
-		    
 		    
 		    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 		    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-            <!-- Include js plugin -->
-           <script type="text/javascript" src="js/owl-carousel/owl.carousel.min.js"></script>
-            <script type="text/javascript" src="js/owl-carousel/owl.carousel.js"></script>
+            
               <!-- Scrolling Nav JavaScript -->
             <script src="js/jquery.easing.min.js"></script>
             <script src="js/scrolling-nav.js"></script>
-
-
-         
-		    <script>
-               $(document).ready(function() {
-                   $("#carousel").owlCarousel({
-                       navigation : true, // Show next and prev                           buttons
-                        slideSpeed : 300,
-                        paginationSpeed : 400,
-                        singleItem:true
-                    //autoplay : true,
-                    //autoplayTimeout : 3500,
-                    //items : 2,
-                   //loop : true,
-                   //margin : 20
-                       
-               });
-            });
-               
-            </script>
+            <!--responsive slides-->
+            <script src="js/responsiveslides.min.js"></script>
 		    
+            <!-- Include js plugin -->
+              <script type="text/javascript" src="js/owl-carousel/owl.carousel.min.js"></script>
+              <script type="text/javascript" src="js/owl-carousel/owl.carousel.js"></script>
+              <!--WOW SLIDER -->
+              <script type="text/javascript" src="engine0/wowslider.js"></script>
+	<script type="text/javascript" src="engine0/script.js"></script>
+    
         
-       </body>
-    </html>
+    
+
+
+  </body>
+       </html>

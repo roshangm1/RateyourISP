@@ -7,16 +7,16 @@
 }
 #logo{
       font-size: 25px;
-  
 }
-#carousel .item img{
-    display: block;
-    width: 100%; 
-    height: auto;
-    
+.container {
+    width:85%;
+  margin: 0px auto;
 }
 body{
 	text-align: center;
+    font-family: comic  sans ms; 
+    padding: 0px;
+    margin: 0px;
 }
 #levels{
 	text-align: left;
@@ -39,4 +39,26 @@ body{
 .btn-round.btn-lg {
     width: 48px;
     height: 48px;
+}
+button { 
+    background-color: #869791;
+    border: none;
+    color: #FFF;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+a {
+  color: #fff;
+  text-decoration:none;
+}
+footer img{
+  float: left;
+}
+hr{
+  clear: both;
 }
