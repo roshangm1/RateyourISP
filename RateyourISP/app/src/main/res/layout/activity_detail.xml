@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context="roshan.info.np.rateyourisp.activities.DetailActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapseLayout"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+
+            android:theme="@style/Theme.AppCompat"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_detail"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+                <TextView
+                    android:id="@+id/toolbar_detail_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Rate your ISP"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#fff"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/isp_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="16dp"
+                android:text="Subisu"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="#262626"
+                android:typeface="monospace" />
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Average rating"
+                    />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+
+                android:gravity="center"
+                >
+                <RatingBar
+                    android:id="@+id/aveRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:theme="@style/RatingBar"
+                    style="?attr/ratingBarStyleSmall"/>
+                <TextView
+                    android:id="@+id/aveRateNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" (3.7)"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/isp_desp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="5dp"
+                android:text="This block will contain the description of the ISP....\nThis block will contain the description of the ISP....\nThis block will contain the description of the ISP....This block will contain the description of the ISP....This block will contain the description of the ISP....This block will contain the description of the ISP...." />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ddd" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="Overall Rating"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#262626" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="8"
+                        android:text="Performance"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <RatingBar
+                        android:id="@+id/rating1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        style="?attr/ratingBarStyleSmall"
+                        android:numStars="5"
+                        android:theme="@style/RatingBar" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="8"
+                        android:text="Reliability"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <RatingBar
+                        android:id="@+id/rating2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        style="?attr/ratingBarStyleSmall"
+                        android:theme="@style/RatingBar" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="8"
+                        android:text="Customer Service"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <RatingBar
+                        android:id="@+id/rating3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        style="?attr/ratingBarStyleSmall"
+                        android:theme="@style/RatingBar" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="8"
+                        android:text="Value for money"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <RatingBar
+                        android:id="@+id/rating4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        style="?attr/ratingBarStyleSmall"
+                        android:numStars="5"
+                        android:theme="@style/RatingBar" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/all_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_gravity="center"
+                android:padding="16dp"
+                fancy:fb_borderColor="#9bd823"
+                fancy:fb_borderWidth="2dp"
+                fancy:fb_focusColor="#ddd"
+                fancy:fb_ghost="true"
+                fancy:fb_radius="3dp"
+                fancy:fb_text="All Reviews (23)"
+                fancy:fb_textColor="#000">
+
+            </mehdi.sakout.fancybuttons.FancyButton>
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_anchor="@id/nested"
+        android:src="@drawable/plus"
+        app:layout_anchorGravity="bottom|right|end" />
+
+</android.support.design.widget.CoordinatorLayout>

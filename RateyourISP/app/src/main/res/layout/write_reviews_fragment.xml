@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Write a review"
+        android:padding="6dp"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/review_text"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="Write your review here"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="8"
+                android:text="Performance"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/rate1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                style="?android:attr/ratingBarStyleSmall"
+                android:isIndicator="false"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+
+                android:theme="@style/RatingBar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="8"
+                android:text="Reliability"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/rate2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                style="?android:attr/ratingBarStyleSmall"
+                android:isIndicator="false"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+
+                android:theme="@style/RatingBar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="8"
+                android:text="Customer Service"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/rate3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:isIndicator="false"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:theme="@style/RatingBar" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="8"
+                android:text="Value for money"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/rate4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                style="?android:attr/ratingBarStyleSmall"
+                android:isIndicator="false"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:theme="@style/RatingBar" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
