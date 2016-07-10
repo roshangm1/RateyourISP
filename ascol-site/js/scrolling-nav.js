@@ -2,8 +2,10 @@
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
+        $(".navbar-brand").addClass("logo-small");
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        $(".navbar-brand").removeClass("logo-small");
     }
 });
 
@@ -16,4 +18,13 @@ $(function() {
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
+});
+
+
+$(window).scroll(function() {
+  if ($(document).scrollTop() > 50) {
+    $('nav').addClass('shrink');
+  } else {
+    $('nav').removeClass('shrink');
+  }
 });

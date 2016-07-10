@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -34,13 +35,11 @@ import roshan.info.np.rateyourisp.models.Rate;
 
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private String rev,imageUrl;
-    private int rateCount=1;
+    private String rev;
     private int pos;
     private FloatingActionButton fab;
-    private float ovrate1,ovrate2,ovrate3,ovrate4;
-    private RatingBar ratingOverall1,ratingOverall2,ratingOverall3,ratingOverall4,averageRate;
-   private TextView nameOfIsp,despOfIsp, aveRateNum;
+    private RatingBar ratingOverall1, ratingOverall2, ratingOverall3, ratingOverall4, averageRate;
+    private TextView aveRateNum;
 
 
     FancyButton button;
@@ -60,11 +59,13 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapseLayout);
-        collapsingToolbar.setTitle("Rate your ISP");
+        assert collapsingToolbar != null;
+        collapsingToolbar.setTitle("Rate my ISP");
 
         button = (FancyButton) findViewById(R.id.all_reviews);
 
 
+        assert button != null;
         button.setOnClickListener(this);
 
         //Custom fragment for dialog
@@ -78,10 +79,12 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         final RatingBar rate4 = (RatingBar) customView.findViewById(R.id.rate4);
         //End
 
-        nameOfIsp= (TextView) findViewById(R.id.isp_name);
-        despOfIsp= (TextView) findViewById(R.id.isp_desp);
+        TextView nameOfIsp = (TextView) findViewById(R.id.isp_name);
+        TextView despOfIsp = (TextView) findViewById(R.id.isp_desp);
 
+        assert nameOfIsp != null;
         nameOfIsp.setText(getIntent().getStringExtra("name"));
+        assert despOfIsp != null;
         despOfIsp.setText(getIntent().getStringExtra("desp"));
 
         ratingOverall1 = (RatingBar) findViewById(R.id.rating1);
@@ -89,10 +92,10 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         ratingOverall3 = (RatingBar) findViewById(R.id.rating3);
         ratingOverall4 = (RatingBar) findViewById(R.id.rating4);
 
-        averageRate= (RatingBar) findViewById(R.id.aveRate);
-        aveRateNum= (TextView) findViewById(R.id.aveRateNum);
+        averageRate = (RatingBar) findViewById(R.id.aveRate);
+        aveRateNum = (TextView) findViewById(R.id.aveRateNum);
 
-        fab= (FloatingActionButton) findViewById(R.id.fab_post);
+        fab = (FloatingActionButton) findViewById(R.id.fab_post);
 
         pos = getIntent().getIntExtra("pos", 0);
 
@@ -100,52 +103,59 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new MaterialDialog.Builder(DetailActivity.this)
-                        .customView(customView,true)
+                MaterialDialog.Builder dialog = new MaterialDialog.Builder(DetailActivity.this);
+                dialog
+                        .customView(customView, true)
                         .positiveText("Submit")
                         .negativeText("Cancel")
+                        .cancelable(false)
                         .onPositive(new MaterialDialog.SingleButtonCallback() {
                             @Override
                             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                float ave,r1,r2,r3,r4;
+                                float ave, r1, r2, r3, r4;
+                                rev = reviewText.getText().toString();
+                                if (!rev.equals("")) {
+                                    r1 = rate1.getRating();
+                                    r2 = rate2.getRating();
+                                    r3 = rate3.getRating();
+                                    r4 = rate4.getRating();
+                                    ave = (r1 + r2 + r3 + r4) / 4;
+                                    writeNewPost(r1, r2, r3, r4, rev, ave);
 
-                                rev= reviewText.getText().toString();
-                                r1=  rate1.getRating();
-                                r2=  rate2.getRating();
-                                r3=  rate3.getRating();
-                                r4=  rate4.getRating();
-                                ave = (r1+r2+r3+r4)/4;
-                                writeNewPost(r1,r2,r3,r4, rev,ave);
+                                } else {
+                                    Toast.makeText(DetailActivity.this, "Please write a review first!!", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        })
-                        .show();
+                        }).show();
+
+
             }
         });
 
 
-        reference2= FirebaseDatabase.getInstance().getReference().child("isp_lists").child(String.valueOf(pos)).child("rates");
+        reference2 = FirebaseDatabase.getInstance().getReference().child("isp_lists").child(String.valueOf(pos)).child("rates");
 
         reference2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Rate rate = dataSnapshot.getValue(Rate.class);
-                getSharedPreferences("total_rate",MODE_PRIVATE).edit().putInt("rateCount",rate.rateCount).apply();
-                getSharedPreferences("total_rate",MODE_PRIVATE).edit().putFloat("rate1",rate.rate1).apply();
-                getSharedPreferences("total_rate",MODE_PRIVATE).edit().putFloat("rate2",rate.rate2).apply();
-                getSharedPreferences("total_rate",MODE_PRIVATE).edit().putFloat("rate3",rate.rate3).apply();
-                getSharedPreferences("total_rate",MODE_PRIVATE).edit().putFloat("rate4",rate.rate4).apply();
-                getSharedPreferences("total_rate",MODE_PRIVATE).edit().putFloat("aveRate",rate.aveRate).apply();
+                getSharedPreferences("total_rate", MODE_PRIVATE).edit().putInt("rateCount", rate.rateCount).apply();
+                getSharedPreferences("total_rate", MODE_PRIVATE).edit().putFloat("rate1", rate.rate1).apply();
+                getSharedPreferences("total_rate", MODE_PRIVATE).edit().putFloat("rate2", rate.rate2).apply();
+                getSharedPreferences("total_rate", MODE_PRIVATE).edit().putFloat("rate3", rate.rate3).apply();
+                getSharedPreferences("total_rate", MODE_PRIVATE).edit().putFloat("rate4", rate.rate4).apply();
+                getSharedPreferences("total_rate", MODE_PRIVATE).edit().putFloat("aveRate", rate.aveRate).apply();
 
-                Log.d("Debug", String.valueOf(rate.aveRate/rate.rateCount));
+                Log.d("Debug", String.valueOf(rate.aveRate / rate.rateCount));
 
 
-                ratingOverall1.setRating(rate.rate1/rate.rateCount);
-                ratingOverall2.setRating(rate.rate2/rate.rateCount);
-                ratingOverall3.setRating(rate.rate3/rate.rateCount);
-                ratingOverall4.setRating(rate.rate4/rate.rateCount);
+                ratingOverall1.setRating(rate.rate1 / rate.rateCount);
+                ratingOverall2.setRating(rate.rate2 / rate.rateCount);
+                ratingOverall3.setRating(rate.rate3 / rate.rateCount);
+                ratingOverall4.setRating(rate.rate4 / rate.rateCount);
 
-                averageRate.setRating(rate.aveRate/rate.rateCount);
-                aveRateNum.setText(String.format(Locale.ENGLISH,"%.2f",rate.aveRate/rate.rateCount));
+                averageRate.setRating(rate.aveRate / rate.rateCount);
+                aveRateNum.setText(String.format(Locale.ENGLISH, "%.2f", rate.aveRate / rate.rateCount));
 
                 button.setText("All reviews (" + String.valueOf(rate.rateCount) + ")");
 
@@ -156,7 +166,6 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
             }
         });
-
 
 
     }
@@ -172,30 +181,29 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        if(v.getId()==R.id.all_reviews) {
-            startActivity(new Intent(this, AllReviews.class).putExtra("key",pos).putExtra("name",getIntent().getStringExtra("name")));
+        if (v.getId() == R.id.all_reviews) {
+            startActivity(new Intent(this, AllReviews.class).putExtra("key", pos).putExtra("name", getIntent().getStringExtra("name")));
         }
     }
 
     private void writeNewPost(float r1, float r2, float r3, float r4, String rev, float ave) {
-        ovrate1=r1 + getSharedPreferences("total_rate",MODE_PRIVATE).getFloat("rate1",0);
-        ovrate2=r2 + getSharedPreferences("total_rate",MODE_PRIVATE).getFloat("rate2",0);
-        ovrate3=r3 + getSharedPreferences("total_rate",MODE_PRIVATE).getFloat("rate3",0);
-        ovrate4=r4 + getSharedPreferences("total_rate",MODE_PRIVATE).getFloat("rate4",0);
-        ave = ave + getSharedPreferences("total_rate",MODE_PRIVATE).getFloat("aveRate",0);
+        float ovrate1 = r1 + getSharedPreferences("total_rate", MODE_PRIVATE).getFloat("rate1", 0);
+        float ovrate2 = r2 + getSharedPreferences("total_rate", MODE_PRIVATE).getFloat("rate2", 0);
+        float ovrate3 = r3 + getSharedPreferences("total_rate", MODE_PRIVATE).getFloat("rate3", 0);
+        float ovrate4 = r4 + getSharedPreferences("total_rate", MODE_PRIVATE).getFloat("rate4", 0);
+        ave = ave + getSharedPreferences("total_rate", MODE_PRIVATE).getFloat("aveRate", 0);
 
         int rateCount = getSharedPreferences("total_rate", MODE_PRIVATE).getInt("rateCount", 0) + 1;
 
-        Post post  = new Post(FirebaseAuth.getInstance().getCurrentUser().getDisplayName(),ovrate1,ovrate2,ovrate3,ovrate4, r1,r2,r3,r4, rateCount, rev , ave,FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString());
+        Post post = new Post(FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), ovrate1, ovrate2, ovrate3, ovrate4, r1, r2, r3, r4, rateCount, rev, ave, FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString());
         Map<String, Object> postValues = post.toMap();
 
         DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference().child("isp_lists").child(String.valueOf(pos)).child("reviews");
         reference1.push().setValue(postValues);
 
-        Map<String,Object> postRateValues = post.toMapRate();
+        Map<String, Object> postRateValues = post.toMapRate();
         reference2.setValue(postRateValues);
     }
-
 
 
     @Override

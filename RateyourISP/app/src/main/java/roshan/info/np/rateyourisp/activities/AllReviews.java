@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -38,17 +37,15 @@ public class AllReviews extends AppCompatActivity implements ChildEventListener 
 
         recyclerView= (RecyclerView) findViewById(R.id.recy_review);
 
-        TextView title = (TextView) findViewById(R.id.toolbar_allreviews_title);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_review);
         setSupportActionBar(toolbar);
 
-        assert title != null;
-        title.setText(getIntent().getStringExtra("name"));
-
+        setTitle(getIntent().getStringExtra("name"));
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        assert toolbar != null;
         toolbar.setNavigationIcon(R.drawable.close);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

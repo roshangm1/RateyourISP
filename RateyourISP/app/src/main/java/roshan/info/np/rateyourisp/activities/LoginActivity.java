@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -26,8 +27,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import roshan.info.np.rateyourisp.R;
 
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-
-    SignInButton signInButton;
+    CardView signInButton;
     GoogleApiClient client;
 
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        signInButton = (SignInButton) findViewById(R.id.signIn);
+        signInButton = (CardView) findViewById(R.id.signin);
 
         progress= (ProgressBar) findViewById(R.id.processing);
 
@@ -55,9 +55,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     //Logged in
                     startActivity(new Intent(LoginActivity.this,MainActivity.class));
                     finish();
-                } else {
-                    //Signed Out
-
                 }
             }
         };

@@ -7,9 +7,7 @@ import java.util.HashMap;
 
 @IgnoreExtraProperties
 public class Post {
-    public String uid;
     public String reviewer,review,imageUrl;
-    public long time_stamp;
     public float aveRate,r1,r2,r3,r4,ovR1,ovR2,ovR3,ovR4;
 
     public int rateCount;
@@ -17,7 +15,6 @@ public class Post {
     public Post() {}
 
     public Post(String reviewer,float ovR1, float ovR2, float ovR3, float ovR4,float r1, float r2, float r3, float r4, int rateCount, String review, float aveRate, String imageUrl) {
-        this.uid=uid;
         this.reviewer=reviewer;
         this.review=review;
         this.aveRate=aveRate;
@@ -26,13 +23,11 @@ public class Post {
         this.rateCount = rateCount;
         this.imageUrl=imageUrl;
 
-        this.time_stamp=time_stamp;
     }
 
     @Exclude
     public HashMap<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
-        //result.put("uid",uid);
         result.put("reviewer",reviewer);
         result.put("review",review);
         result.put("r1",r1);
@@ -41,7 +36,6 @@ public class Post {
         result.put("r4",r4);
         result.put("imageUrl",imageUrl);
 
-        //result.put("time_stamp",time_stamp);
 
         return result;
     }

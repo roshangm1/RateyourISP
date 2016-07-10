@@ -1,44 +1,33 @@
 package roshan.info.np.rateyourisp.fragments;
 
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.Map;
-
+import roshan.info.np.rateyourisp.R;
 import roshan.info.np.rateyourisp.activities.AboutUs;
 import roshan.info.np.rateyourisp.activities.DetailActivity;
-import roshan.info.np.rateyourisp.extras.MyApplication;
-import roshan.info.np.rateyourisp.models.MyList;
-import roshan.info.np.rateyourisp.R;
-import roshan.info.np.rateyourisp.interfaces.ClickListener;
 import roshan.info.np.rateyourisp.adapters.ISPListAdapter;
-import roshan.info.np.rateyourisp.models.Post;
+import roshan.info.np.rateyourisp.interfaces.ClickListener;
+import roshan.info.np.rateyourisp.models.MyList;
 
 
 /**
@@ -47,7 +36,6 @@ import roshan.info.np.rateyourisp.models.Post;
 public class ISPList extends Fragment implements ValueEventListener {
 
     private RecyclerView recyclerViewISP;
-    private ArrayList<MyList> list = new ArrayList<>();
     private LinearLayout errorLayout;
     ProgressBar progress;
 

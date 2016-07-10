@@ -14,7 +14,7 @@
 }
 body{
 	text-align: center;
-    font-family: comic  sans ms; 
+    background-color: #06213F;
     padding: 0px;
     margin: 0px;
 }
@@ -52,6 +52,7 @@ button {
     border-radius: 5px;
 }
 
+
 a {
   color: #fff;
   text-decoration:none;
@@ -61,4 +62,36 @@ footer img{
 }
 hr{
   clear: both;
+}
+
+
+.navbar .logo {
+    width: 50px;
+}
+
+.navbar-brand {
+    margin-top: 10px;
+	
+    margin-right: 40px;
+    padding: 0;
+    display: inline-block;
+}
+
+
+
+nav.navbar{
+  
+   // Animation
+   -webkit-transition: all 0.4s ease;
+   transition: all 0.4s ease;
+}
+
+.top-nav-collapse {
+
+
+}
+
+.navbar-brand .logo-small {
+background-color:#ccc;
+height:20px;
 }
