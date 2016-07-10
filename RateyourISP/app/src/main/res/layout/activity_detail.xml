@@ -38,7 +38,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Rate your ISP"
+                    android:text="Rate my ISP"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textColor="#fff"
                     android:textSize="16sp"

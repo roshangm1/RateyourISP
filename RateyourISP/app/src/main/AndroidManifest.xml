@@ -5,14 +5,14 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".extras.MyApplication"
+        android:name="roshan.info.np.rateyourisp.extras.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.LoginActivity"
+            android:name="roshan.info.np.rateyourisp.activities.SplashActivity"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,18 +21,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.DetailActivity"
+            android:name="roshan.info.np.rateyourisp.activities.DetailActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.AllReviews"
+            android:name="roshan.info.np.rateyourisp.activities.AllReviews"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name="roshan.info.np.rateyourisp.activities.MainActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".activities.AboutUs"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name="roshan.info.np.rateyourisp.activities.AboutUs" />
+        <activity
+            android:name="roshan.info.np.rateyourisp.activities.LoginActivity"
+            android:theme="@style/FullscreenTheme">
+
+        </activity>
     </application>
 
 </manifest>

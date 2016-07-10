@@ -12,22 +12,12 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar_main"
+            android:id="@+id/toolbar_about"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
-            android:fitsSystemWindows="true">
-
-
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="About Us"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#fff"
-                android:textStyle="bold" />
+            android:fitsSystemWindows="true"
+            android:theme="@style/ToolbarTheme">
 
         </android.support.v7.widget.Toolbar>
 
@@ -36,43 +26,160 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffe"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/company"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:layout_gravity="center" />
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/company" />
 
             <TextView
-                android:id="@+id/abouut_text"
+                android:id="@+id/name_of_company"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="We are a team of more enthusiasts, merely professionals and keen learners working together to solve the problems using technology. \n\nWe develop mobile apps and web apps and also study hard in the exams. :D\n\nAnd we call ourself Team Brainants. Team, Creativity, Hardwork"
-                android:textSize="17sp" />
+                android:layout_below="@+id/company"
+                android:gravity="center"
+                android:text="Brainants Technology"
+                android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Developer:"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp"
-                android:textSize="18sp"
-                android:typeface="monospace"/>
-
-            <TextView
-                android:id="@+id/developer"
+            <LinearLayout
+                android:id="@+id/about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Roshan Gautam\nroshan@brainants.com\nBrainants Technology\nroshan.info.np"/>
-        </LinearLayout>
+                android:layout_below="@id/name_of_company"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/bb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:gravity="center"
+                    android:typeface="monospace"
+                    android:layout_margin="16dp"
+                    android:text="About Us"/>
+
+
+
+                <TextView
+                    android:id="@+id/about_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="We are a team of more enthusiasts, merely professionals and keen learners working together to solve the problems using technology. \n\nWe develop mobile apps and web apps. We are the students of BSc.CSIT currently studing in Amrit Campus. Beside the development, we work hard for the exams. :D \n\nAnd we call ourself Team Brainants. Team, Creativity, Hardwork"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Developer:"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:id="@+id/developer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Roshan Gautam\n9847603000\nroshan@brainants.com\nBrainants Technology\nroshan.info.np" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/products"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="4dp"
+                android:layout_below="@id/name_of_company">
+
+                <TextView
+                    android:id="@+id/aa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:gravity="center"
+                    android:typeface="monospace"
+                  android:layout_margin="16dp"
+                    android:text="Our Products"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/aa">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Some of our published products are listed below and are available on Google Playstore now.\n\n"
+                        android:textSize="17sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/prod1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:drawableTop="@drawable/csit"
+                            android:gravity="center"
+                            android:text="CSIT Entrance" />
+
+                        <TextView
+                            android:id="@+id/prod2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:drawableTop="@drawable/bsccsit"
+                            android:gravity="center"
+                            android:text="BSc CSIT" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/prod3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:drawableTop="@drawable/benionline"
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:text="Benionline.com.np" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Contact:"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:typeface="monospace" />
+
+                    <TextView
+                        android:id="@+id/contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Brainants Technology\nThamel,Kathmandu\ninfo@brainants.com\nbrainants.com" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
 
     </ScrollView>
 

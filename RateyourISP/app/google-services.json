@@ -8,6 +8,50 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:202265180584:android:22dd0dce6e02d06d",
+        "android_client_info": {
+          "package_name": "roshan.info.np.rateyourisp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202265180584-otb6q3gl6crk7ou98cvc0b4vdu0avo0s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "roshan.info.np.rateyourisp",
+            "certificate_hash": "321EAF7CBF3B2DC734A66B742E8A4BDE29602F20"
+          }
+        },
+        {
+          "client_id": "202265180584-090b9tf1om73q19ut3ljeiojed47hkqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOPSeHrlD7cb4MhvzwEindJdOWDWN2f2c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202265180584-090b9tf1om73q19ut3ljeiojed47hkqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:202265180584:android:731a5f810818d7c2",
         "android_client_info": {
           "package_name": "roshan.info.np.rateyourisp"

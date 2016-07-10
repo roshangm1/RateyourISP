@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Rate Your ISP"
+                android:text="Rate my ISP"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#fff"
                 android:textStyle="bold" />
